@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enchanted Gallery | Daniel</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://googletagmanager.com"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // Hapa unaweka ID yako ya Google Analytics
+  gtag('config', 'G-YOUR_MEASUREMENT_ID'); 
+</script>
+
+</head>
+<body>
+
+    <div class="background-glow1"></div>
+    <div class="background-glow2"></div>
+
+    <div class="container">
+        <header>
+            <h1 class="logo">Enchanted <span>Gallery</span></h1>
+            <p class="subtitle">Click on any artwork to reveal its cosmic story or give it a like.</p>
+        </header>
+
+        <!-- Gallery Grid Section -->
+        <main class="gallery-grid">
+            <!-- Card 1 -->
+            <div class="gallery-card" data-title="The Fallen Star" data-story="Deep within the whispered woods, the leaves don't just die—they turn into pure cosmic gold. Legend says that thousands of years ago, a star fell from the highest galaxy and dissolved into the roots of these ancient trees. Since then, whoever catches a falling leaf from the Golden Autumn canopy is granted a single, unalterable glance into their own future. Many travelers spend lifetimes waiting for one leaf to drop, but the forest only chooses those with a pure heart.">
+                <div class="image-box">
+                    <img src="star.jpg" alt="The Fallen Star">
+                </div>
+                <div class="card-info">
+                    <h3>The Fallen Star</h3>
+                    <p>Click to reveal the cosmic secret of the golden leaves...</p>
+                    <!-- Like Button Area -->
+                    <div class="card-actions">
+                        <button class="like-btn">
+                            <span class="heart-icon">♥</span> <span class="like-count">12</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="gallery-card" data-title="The Autumn's Whisper" data-story="The Mystic Autumn Rose blooms only once every millennium in the silent heart of the lavender valley. Its petals do not carry scent; instead, they hold the ancient, unspoken memories of forgotten civilizations and extinct stars. As the night falls, the rose radiates a gentle, warm lavender glow that is said to instantly heal any heavy heart or troubled mind. To gaze upon it is to understand the language of the universe itself.">
+                <div class="image-box">
+                    <img src="autumn.jpg" alt="The Autumn's Whisper">
+                </div>
+                <div class="card-info">
+                    <h3>The Autumn's Whisper</h3>
+                    <p>Click to unlock the memory of the ancient lavender valley...</p>
+                    <div class="card-actions">
+                        <button class="like-btn">
+                            <span class="heart-icon">♥</span> <span class="like-count">8</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="gallery-card" data-title="The Timeless Rose" data-story="A legendary timeless rose didn't just bloom; it was created when a shard of cosmic light blended perfectly with human imagination. It stands as a frozen second in eternity, capturing the exact moment love and art collided across the dark sky. Looking into its center reveals infinite shifting paths, showing that every dream we dream creates a whole new world somewhere out there in the vast, uncharted cosmos.">
+                <div class="image-box">
+                    <img src="rose.jpg" alt="The Timeless Rose">
+                </div>
+                <div class="card-info">
+                    <h3>The Timeless Rose</h3>
+                    <p>Click to step into the infinite sea of cosmic dreams...</p>
+                    <div class="card-actions">
+                        <button class="like-btn">
+                            <span class="heart-icon">♥</span> <span class="like-count">24</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Dynamic Modal (Story + Automated Feedback Inside!) -->
+        <div id="storyModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 id="modalTitle">Story Title</h2>
+                <p id="modalBody">The story text will appear here...</p>
+                
+                <!-- Comment Box Inside Modal -->
+                <div class="modal-comment-section">
+                    <h4>Leave a Review for this Story ✨</h4>
+                    
+                    <!-- MPYA: Automated Quick Feedback Buttons -->
+                    <div class="preset-comments">
+                        <button type="button" class="preset-btn positive">Beautiful! 💖</button>
+                        <button type="button" class="preset-btn positive">Awesome tale! ✨</button>
+                        <button type="button" class="preset-btn negative">Too short 🛠️</button>
+                        <button type="button" class="preset-btn negative">Needs improvement ⏳</button>
+                    </div>
+
+                    <form action="https://formspree.io/f/xrpejkvz" method="POST" id="modalCommentForm">
+                        <input type="hidden" name="story_name" id="hiddenStoryField">
+                        <div class="modal-input-group">
+                            <input type="text" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="modal-input-group">
+                            <textarea name="comment" id="commentBox" rows="3" required placeholder="What do you think about this tale?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-modal-submit">Send Review 🚀</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM SECTION: Email Subscription for Stories -->
+        <section class="subscription-box">
+            <h2>Want More Magical Stories? 🌌</h2>
+            <p>Subscribe to our mystical letters and receive exclusive enchanting tales directly in your inbox.</p>
+            <form action="https://formspree.io/f/mjyglrlw" method="POST" id="subscribeForm">
+                <div class="subscribe-group">
+                    <input type="email" name="email" required placeholder="Enter your secret email address...">
+                    <button type="submit" class="btn-subscribe">Subscribe ✨</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

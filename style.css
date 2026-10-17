@@ -1,0 +1,443 @@
+/* Base Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --lavender-dark: #1a0b2e;
+    --lavender-light: #b19cd9;
+    --gold: #ffd700;
+    --gold-glow: rgba(255, 215, 0, 0.4);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #f5f0ff;
+}
+
+body {
+    background-color: var(--lavender-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    padding: 2rem 1rem;
+}
+
+/* Background Glowing Orbs for Magical Vibe */
+.background-glow1 {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(177,156,217,0.3) 0%, rgba(0,0,0,0) 70%);
+    z-index: -1;
+}
+
+.background-glow2 {
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, rgba(0,0,0,0) 70%);
+    z-index: -1;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-main);
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: var(--gold);
+    text-shadow: 0 0 15px var(--gold-glow);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--lavender-light);
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+}
+
+/* Gallery Grid (Glassmorphism design) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.gallery-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 215, 0, 0.4);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.15);
+}
+
+.image-box {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .image-box img {
+    transform: scale(1.1);
+}
+
+.card-info {
+    padding: 1.5rem;
+}
+
+.card-info h3 {
+    color: var(--gold);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-info p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Comment Section Styling */
+.comment-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 2.5rem;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.comment-box h2 {
+    text-align: center;
+    color: var(--text-main);
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--gold), #cca100);
+    border: none;
+    border-radius: 12px;
+    color: #1a0b2e;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+/* Story Box Styling */
+.story-box {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 2.5rem;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.story-box h2 {
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.story-box p {
+    color: #dedede;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-style: italic;
+}
+/* Modal (Pop-up) Base Setup */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 11, 46, 0.85);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* Inaruhusu kuscroll kama screen ni ndogo */
+    padding: 2rem 0;
+}
+
+.modal-content {
+    background: rgba(35, 18, 60, 0.95);
+    border: 2px solid var(--gold);
+    padding: 2.5rem;
+    border-radius: 25px;
+    max-width: 550px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 30px var(--gold-glow);
+    animation: zoomIn 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto; /* Inazuia content isitoke nje ya kadi */
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: var(--lavender-light);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover { color: var(--gold); }
+
+#modalTitle { color: var(--gold); font-size: 1.8rem; margin-bottom: 1rem; }
+#modalBody { color: #f0f0f0; font-size: 1rem; line-height: 1.6; font-style: italic; margin-bottom: 2rem; }
+
+/* Comment Box Inside Modal */
+.modal-comment-section {
+    border-top: 1px solid var(--glass-border);
+    padding-top: 1.5rem;
+    text-align: left;
+}
+
+.modal-comment-section h4 {
+    color: var(--lavender-light);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.modal-input-group { margin-bottom: 1rem; }
+.modal-input-group input, .modal-input-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.modal-input-group input:focus, .modal-input-group textarea:focus {
+    border-color: var(--gold);
+}
+
+.btn-modal-submit {
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(135deg, var(--gold), #cca100);
+    border: none;
+    border-radius: 10px;
+    color: #1a0b2e;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Subscription Box (Bottom of Page) */
+.subscription-box {
+    max-width: 750px;
+    margin: 4rem auto 0 auto;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 3rem 2rem;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.subscription-box h2 { color: var(--gold); margin-bottom: 0.5rem; font-size: 1.8rem; }
+.subscription-box p { color: #ccc; margin-bottom: 2rem; font-size: 1rem; }
+
+.subscribe-group {
+    display: flex;
+    gap: 1rem;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.subscribe-group input {
+    flex: 1;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+}
+
+.subscribe-group input:focus { border-color: var(--gold); }
+
+.btn-subscribe {
+    padding: 0 2rem;
+    background: var(--text-main);
+    color: var(--lavender-dark);
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-subscribe:hover {
+    background: var(--gold);
+    box-shadow: 0 0 15px var(--gold-glow);
+}
+
+/* Kufanya fomu ijiseti vizuri kwenye simu */
+@media (max-width: 600px) {
+    .subscribe-group { flex-direction: column; }
+    .btn-subscribe { padding: 1rem; }
+}
+/* Card Actions (Like Button) */
+.card-actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.like-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    color: var(--text-main);
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.like-btn:hover {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.like-btn.liked {
+    background: var(--gold);
+    color: var(--lavender-dark);
+    border-color: var(--gold);
+}
+
+.heart-icon {
+    font-size: 1.1rem;
+}
+
+/* Preset Comments (Quick Buttons inside Modal) */
+.preset-comments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.preset-btn {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-main);
+    transition: all 0.2s ease;
+}
+
+.preset-btn.positive:hover {
+    border-color: #00ff88;
+    background: rgba(0, 255, 136, 0.1);
+}
+
+.preset-btn.negative:hover {
+    border-color: #ff4a4a;
+    background: rgba(255, 74, 74, 0.1);
+}
